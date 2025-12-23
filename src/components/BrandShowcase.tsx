@@ -11,6 +11,10 @@ const hardwareBrands = [
     logoUrl: "https://static.xx.fbcdn.net/rsrc.php/y9/r/tL_v571NdZ0.svg",
     productCount: 24,
     startingPrice: "$299",
+    badgeImage: "/images/logos/meta-work-partner-premier.png",
+    badgeAlt: "Meta Work Partner Premier",
+    badgeTitle: "Meta Premier Partner",
+    badgeDescription: "Premier partner for Meta headsets and MDMs",
   },
   {
     id: "pico",
@@ -19,6 +23,10 @@ const hardwareBrands = [
     logoUrl: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEyIiBoZWlnaHQ9IjQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGNsaXAtcGF0aD0idXJsKCNhKSIgZmlsbD0iIzAwMCI+PHBhdGggZD0iTTE3Ljc1NiA0LjAxN0M4LjkyIDMuNjA4IDEuNDI4IDEwLjQzMSAxLjAxOCAxOS4yNmMtLjQxIDguODI3IDYuNDE4IDE2LjMxNSAxNS4yNTMgMTYuNzI0IDguODM0LjQwOSAxNi4zMjctNi40MTQgMTYuNzM3LTE1LjI0Mi40MS04LjgyNi02LjQyLTE2LjMxMy0xNS4yNTItMTYuNzI0Wm0tLjE5IDQuMDc1YzYuNTgzLjMwNSAxMS42NzEgNS44ODQgMTEuMzY1IDEyLjQ2MmExMS44NjggMTEuODY4IDAgMCAxLTEuMzMzIDQuOTUzbC03LjQ1Ni05LjQ2M2ExMTYuNTg3IDExNi41ODcgMCAwIDAtLjMxOS0uNDA0IDExLjk3IDExLjk3IDAgMCAwLTkuMTU4LTQuMzU5bC0uMDk1LS4wMDFjLS42MjUgMC0xLjI0LjA0OS0xLjgzOC4xNGExMS44OTIgMTEuODkyIDAgMCAxIDguODM1LTMuMzI4Wk0xNi40NiAzMS45MWMtNi41ODMtLjMwNS0xMS42NzEtNS44ODQtMTEuMzY1LTEyLjQ2MS4wNTQtMS4xNTguMjcyLTIuMjY5LjYzLTMuMzEzbC4wNjItLjA0NmE4LjA5NiA4LjA5NiAwIDAgMSAxMS4xNDcgMS41MTZsNS41NSA3LjAzOCAyLjk3NSAzLjc3N2ExMS45MDcgMTEuOTA3IDAgMCAxLTkgMy40OVoiLz48cGF0aCBkPSJNMTIuMTI0IDIwLjk4NGMuMDE3LS4wMjYuMDMzLS4wNTEuMDQ4LS4wNzhsLjAzLS4wNTdjLjAyMS0uMDQuMDQtLjA4LjA1OC0uMTJsLjAxLS4wMjFhMS44NDYgMS44NDYgMCAwIDAtMy4xMjMtMS44OTJsLS4wMi4wMjNhMS42NDUgMS42NDUgMCAwIDAtLjA3Ni4xMDIgMS40NiAxLjQ2IDAgMCAwLS4xNDIuMjM5bC0uMDE1LjAzNGMtLjExNC4yNC0uMTguNTA2LS4xOC43ODhhMS44NDcgMS44NDcgMCAwIDAgMy40MS45ODJaTTY2LjAzNSAxOC4xNjJWMjkuNjFoNC4xODh2LTE5LjJoLTQuMTg4djcuNzUzWk0xMDEuMTQ3IDEwLjE0NmE5Ljg1NiA5Ljg1NiAwIDAgMC05LjIyMyA2LjM3NSA5LjgwNSA5LjgwNSAwIDAgMC0uNjMxIDMuNDcgOS44MzUgOS44MzUgMCAwIDAgMS4xOTEgNC42OTcgOS44NTMgOS44NTMgMCAwIDAgOC42NjIgNS4xNDdjNS40NDIgMCA5Ljg1NC00LjQwNyA5Ljg1NC05Ljg0NSAwLTUuNDM3LTQuNDExLTkuODQ0LTkuODUzLTkuODQ0Wm0wIDE1Ljc1NGE1LjkxIDUuOTEgMCAwIDEtNS45MTMtNS45MDkgNS45MSA1LjkxIDAgMCAxIDUuOTEzLTUuOTA4IDUuOTEgNS45MSAwIDEgMSAwIDExLjgxN1pNNTUuNjQ3IDEwLjQyMmMtLjE1LS4wMS0uOTE1LS4wMTQtMS4wNjctLjAxNEg0NC4xMVYyOS42MWg0LjA2NXYtNC40MzFoNi40MDVjLjE0OCAwIC45MTMtLjAwNSAxLjA2LS4wMTNhNy4zOSA3LjM5IDAgMCAwIDYuOTQ3LTcuMzcyYzAtLjA3LS4wMDMtLjE0LS4wMDUtLjIxYTcuMzkgNy4zOSAwIDAgMC02LjkzNS03LjE2MVptLS4wMDggMTAuNzljLS4xNDUuMDE4LS42NjIuMDI4LS44MTIuMDI4aC02LjY1di02Ljg5M2g2LjY1Yy4xNDcgMCAuNjYzLjAxLjgwNS4wMjdhMy40NDggMy40NDggMCAwIDEgLjAwNyA2LjgzOFpNNzcuNjc0IDIwLjAwNWMuMDA0LTQuODE5IDUuMjEtNy45NjEgMTAuNDItNC41NDNsMi4zMjYtMi45NTFjLTYuODc5LTUuMzctMTYuNzQtMS4wNjctMTYuNzUgNy40ODh2LjAxMmMuMDEgOC41NTUgOS44NzEgMTIuODYgMTYuNzUgNy40ODlsLTIuMzI2LTIuOTUyYy01LjIxIDMuNDE5LTEwLjQxNi4yNzUtMTAuNDItNC41NDNaIi8+PC9nPjxkZWZzPjxjbGlwUGF0aCBpZD0iYSI+PHBhdGggZmlsbD0iI2ZmZiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSA0KSIgZD0iTTAgMGgxMTB2MzJIMHoiLz48L2NsaXBQYXRoPjwvZGVmcz48L3N2Zz4=",
     productCount: 18,
     startingPrice: "$449",
+    badgeImage: "/images/logos/authorized-distributor.png",
+    badgeAlt: "Authorized Distributor",
+    badgeTitle: "Authorized Distributor",
+    badgeDescription: "Authorized distributor for Pico headsets",
   },
   {
     id: "apple",
@@ -27,6 +35,10 @@ const hardwareBrands = [
     logoUrl: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
     productCount: 6,
     startingPrice: "$3,499",
+    badgeImage: "/images/logos/apple-authorized-reseller.png",
+    badgeAlt: "Apple Authorized Reseller",
+    badgeTitle: "Apple Authorized Reseller",
+    badgeDescription: "Authorized reseller for Apple products",
   },
 ];
 
@@ -81,42 +93,70 @@ export function BrandShowcase() {
           </p>
         </div>
 
-        {/* Hardware Brands - Compact eBay Style */}
+        {/* Hardware Brands with Partnership Badges - Enhanced */}
         <div className="mb-8">
-          <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+          <h3 className="mb-6 text-xs font-semibold uppercase tracking-wide text-zinc-500">
             Hardware Partners
           </h3>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-3">
             {hardwareBrands.map((brand) => (
-              <Link
+              <div
                 key={brand.id}
-                href={brand.link}
-                className="group flex flex-col items-center justify-center rounded-lg border border-zinc-200 bg-white p-5 shadow-sm transition-all duration-300 hover:border-red-300 hover:shadow-md"
+                className="group flex flex-col rounded-lg border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:border-red-300 hover:shadow-md overflow-hidden"
               >
-                <div className="relative mb-3 h-12 w-full">
-                  <Image
-                    src={brand.logoUrl}
-                    alt={`${brand.name} logo`}
-                    fill
-                    className="object-contain object-center"
-                    sizes="(min-width: 640px) 33vw, 100vw"
-                  />
-                </div>
-                <p className="mb-2 text-base font-bold text-zinc-900 group-hover:text-red-600 transition-colors">
-                  {brand.name}
-                </p>
-                <div className="flex items-center gap-3 text-xs">
-                  <div className="text-center">
-                    <p className="text-lg font-extrabold text-red-600">{brand.productCount}</p>
-                    <p className="text-[10px] text-zinc-500">Products</p>
+                {/* Partnership Badge Section */}
+                <div className="relative bg-gradient-to-br from-zinc-50 to-white p-4 border-b border-zinc-100">
+                  <div className={`relative w-full h-24 flex items-center justify-center ${
+                    brand.id === 'apple' ? 'bg-white rounded-lg p-3' : ''
+                  }`}>
+                    <Image
+                      src={brand.badgeImage}
+                      alt={brand.badgeAlt}
+                      fill
+                      className="object-contain"
+                      sizes="(min-width: 640px) 33vw, 100vw"
+                    />
                   </div>
-                  <div className="h-6 w-px bg-zinc-200"></div>
-                  <div className="text-center">
-                    <p className="text-xs font-bold text-zinc-900">From</p>
-                    <p className="text-sm font-extrabold text-emerald-600">{brand.startingPrice}</p>
+                  <div className="mt-3 text-center">
+                    <p className="text-xs font-semibold text-zinc-900 mb-0.5">
+                      {brand.badgeTitle}
+                    </p>
+                    <p className="text-[10px] text-zinc-600 leading-tight">
+                      {brand.badgeDescription}
+                    </p>
                   </div>
                 </div>
-              </Link>
+
+                {/* Brand Info Section */}
+                <Link
+                  href={brand.link}
+                  className="flex flex-col items-center justify-center p-5 flex-grow"
+                >
+                  <div className="relative mb-3 h-12 w-full">
+                    <Image
+                      src={brand.logoUrl}
+                      alt={`${brand.name} logo`}
+                      fill
+                      className="object-contain object-center"
+                      sizes="(min-width: 640px) 33vw, 100vw"
+                    />
+                  </div>
+                  <p className="mb-2 text-base font-bold text-zinc-900 group-hover:text-red-600 transition-colors">
+                    {brand.name}
+                  </p>
+                  <div className="flex items-center gap-3 text-xs">
+                    <div className="text-center">
+                      <p className="text-lg font-extrabold text-red-600">{brand.productCount}</p>
+                      <p className="text-[10px] text-zinc-500">Products</p>
+                    </div>
+                    <div className="h-6 w-px bg-zinc-200"></div>
+                    <div className="text-center">
+                      <p className="text-xs font-bold text-zinc-900">From</p>
+                      <p className="text-sm font-extrabold text-emerald-600">{brand.startingPrice}</p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
