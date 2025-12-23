@@ -17,7 +17,7 @@ export function Toast({ message, type = "success", onClose, duration = 3000 }: T
 
   const colors = {
     success: "from-emerald-500 to-green-500",
-    error: "from-red-500 to-rose-500",
+    error: "from-red-500 to-red-600",
     info: "from-blue-500 to-cyan-500",
   };
 

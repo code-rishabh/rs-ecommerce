@@ -36,10 +36,10 @@ const stats = [
 
 export function TrustSection() {
   return (
-    <section className="border-b border-zinc-200 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 py-20">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+    <section className="border-b border-zinc-200 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 py-16 lg:py-20">
+      <div className="container-custom">
         {/* Stats */}
-        <div className="mb-16 grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="mb-12 grid grid-cols-2 gap-6 md:grid-cols-4">
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="mb-2 text-4xl font-bold text-white sm:text-5xl">

@@ -65,14 +65,14 @@ export function Header() {
     >
       {/* Promotional Top Banner - eBay/Signs.com inspired */}
       {showPromoBanner && (
-        <div className="relative bg-gradient-to-r from-red-600 via-red-500 to-orange-600 text-white">
-          <div className="mx-auto max-w-7xl px-4 py-2.5">
+        <div className="relative bg-gradient-to-r from-red-500 via-red-500 to-orange-500 text-white">
+          <div className="mx-auto max-w-7xl px-4 py-1.5">
             <div className="flex items-center justify-between gap-4">
               <div className="flex-1 text-center">
-                <p className="text-sm font-semibold">
-                  <span className="mr-2">🎉</span>
+                <p className="text-xs font-semibold">
+                  <span className="mr-1.5">🎉</span>
                   <span>Limited Time: Save up to 25% on enterprise bundles</span>
-                  <Link href="/deals" className="ml-2 underline underline-offset-2 hover:text-white/90 font-bold">
+                  <Link href="/deals" className="ml-1.5 underline underline-offset-1 hover:text-white/90 font-bold">
                     Shop Now →
                   </Link>
                 </p>
@@ -100,11 +100,11 @@ export function Header() {
         }`}
       >
         {/* Main Navigation - Compact eBay Style */}
-        <div className="mx-auto max-w-7xl px-3 py-3.5 lg:px-6">
+        <div className="mx-auto max-w-7xl px-3 py-2 lg:px-6">
           <div className="flex items-center justify-between gap-3">
             {/* Logo - Compact */}
             <Link href="/" className="flex items-center gap-2 shrink-0 group">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-red-600 to-red-700 text-sm font-extrabold text-white shadow-md transition-transform group-hover:scale-105">
+              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br from-red-500 to-red-600 text-sm font-extrabold text-white shadow-md transition-transform group-hover:scale-105">
                 RS
               </div>
               <div className="hidden sm:block">
@@ -142,7 +142,7 @@ export function Header() {
                 />
                 <button
                   type="submit"
-                  className="rounded-r-lg border border-l-0 border-zinc-300 bg-red-600 px-3 py-1.5 text-white transition-all hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+                  className="rounded-r-lg border border-l-0 border-zinc-300 bg-gradient-to-r from-red-500 to-red-600 px-3 py-1.5 text-white transition-all hover:from-red-600 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-red-500/20"
                   aria-label="Search"
                 >
                   <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,7 +175,7 @@ export function Header() {
               {/* Wishlist Icon - Compact */}
               <Link
                 href="/account/wishlist"
-                className="relative flex items-center justify-center rounded-lg p-1.5 text-zinc-700 transition-all hover:bg-zinc-100 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/20"
+                  className="relative flex items-center justify-center rounded-lg p-1.5 text-zinc-700 transition-all hover:bg-zinc-100 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500/20"
                 aria-label="Wishlist"
               >
                 <svg
@@ -192,7 +192,7 @@ export function Header() {
                   />
                 </svg>
                 {wishlistCount > 0 && (
-                  <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] font-bold text-white">
+                  <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-red-600 text-[10px] font-bold text-white">
                     {wishlistCount > 9 ? "9+" : wishlistCount}
                   </span>
                 )}
@@ -218,7 +218,7 @@ export function Header() {
                   />
                 </svg>
                 {cartItemCount > 0 && (
-                  <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] font-bold text-white">
+                  <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-gradient-to-r from-red-500 to-red-600 text-[10px] font-bold text-white">
                     {cartItemCount > 9 ? "9+" : cartItemCount}
                   </span>
                 )}
@@ -307,7 +307,7 @@ export function Header() {
               {/* Build Bundle Button - Compact Inline */}
               <Link
                 href="/bundles"
-                className="rounded-lg bg-gradient-to-r from-red-600 to-red-700 px-3 py-1.5 text-xs font-bold text-white shadow-md transition-all hover:from-red-700 hover:to-red-800 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="rounded-lg bg-gradient-to-r from-red-500 to-red-600 px-3 py-1.5 text-xs font-bold text-white shadow-md transition-all hover:from-red-600 hover:to-red-700 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500"
               >
                 Build Bundle
               </Link>
@@ -316,9 +316,9 @@ export function Header() {
         </div>
         
         {/* Trust Bar - Compact eBay Style */}
-        <div className="border-t border-zinc-100 bg-zinc-50/50 py-1">
+        <div className="border-t border-zinc-100 bg-zinc-50/50 py-0.5">
           <div className="mx-auto max-w-7xl px-3 lg:px-6">
-            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[10px]">
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-0.5 text-[9px]">
               <div className="flex items-center gap-1 text-zinc-600">
                 <svg className="h-3 w-3 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />

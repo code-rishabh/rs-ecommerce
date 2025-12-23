@@ -9,15 +9,41 @@ type FilterOption = {
 };
 
 const brandFilters: FilterOption[] = [
-  { id: "meta", label: "Meta", count: 12 },
-  { id: "pico", label: "PICO", count: 8 },
-  { id: "apple", label: "Apple", count: 5 },
+  { id: "meta", label: "Meta", count: 24 },
+  { id: "pico", label: "PICO", count: 18 },
+  { id: "apple", label: "Apple", count: 6 },
+  { id: "htc-vive", label: "HTC Vive", count: 8 },
+  { id: "realwear", label: "RealWear", count: 5 },
+  { id: "jabra", label: "Jabra", count: 12 },
+  { id: "yealink", label: "Yealink", count: 10 },
+  { id: "logitech", label: "Logitech", count: 15 },
+  { id: "dell", label: "Dell", count: 20 },
+  { id: "hp", label: "HP", count: 18 },
+  { id: "lenovo", label: "Lenovo", count: 16 },
+  { id: "acer", label: "Acer", count: 12 },
+  { id: "asus", label: "Asus", count: 14 },
+  { id: "samsung", label: "Samsung", count: 10 },
+  { id: "microsoft", label: "Microsoft", count: 8 },
+  { id: "kiwi-design", label: "Kiwi Design", count: 25 },
+  { id: "syntech", label: "Syntech", count: 15 },
+  { id: "bobovr", label: "BoboVR", count: 12 },
+  { id: "extreme-networks", label: "Extreme Networks", count: 8 },
+  { id: "simply-nuc", label: "Simply NUC", count: 8 },
 ];
 
 const categoryFilters: FilterOption[] = [
-  { id: "vr-headsets", label: "VR Headsets", count: 15 },
-  { id: "accessories", label: "Accessories", count: 8 },
-  { id: "bundles", label: "Bundles", count: 6 },
+  { id: "vr-ar-hardware", label: "VR/AR Hardware", count: 50 },
+  { id: "vr-accessories", label: "VR Accessories", count: 30 },
+  { id: "computers", label: "Computers", count: 40 },
+  { id: "audio", label: "Audio Solutions", count: 25 },
+  { id: "conferencing", label: "Conferencing", count: 15 },
+  { id: "peripherals", label: "Peripherals", count: 35 },
+  { id: "motion-capture-haptics", label: "Motion Capture & Haptics", count: 12 },
+  { id: "networking", label: "Networking", count: 18 },
+  { id: "mdm-services", label: "MDM & Services", count: 10 },
+  { id: "mini-pc", label: "Mini-PC Solutions", count: 8 },
+  { id: "electronics", label: "Electronics", count: 20 },
+  { id: "electronic-device-hygiene", label: "Device Hygiene", count: 5 },
 ];
 
 const priceRanges = [
@@ -75,7 +101,7 @@ export function ProductFilters() {
       {/* Brand Filter */}
       <div className="mb-6 border-b border-zinc-200 pb-4">
         <h4 className="mb-3 text-sm font-semibold text-zinc-900">Brand</h4>
-        <div className="space-y-2">
+        <div className="max-h-64 space-y-2 overflow-y-auto pr-2">
           {brandFilters.map((brand) => (
             <label
               key={brand.id}
@@ -101,7 +127,7 @@ export function ProductFilters() {
       {/* Category Filter */}
       <div className="mb-6 border-b border-zinc-200 pb-4">
         <h4 className="mb-3 text-sm font-semibold text-zinc-900">Category</h4>
-        <div className="space-y-2">
+        <div className="max-h-64 space-y-2 overflow-y-auto pr-2">
           {categoryFilters.map((category) => (
             <label
               key={category.id}

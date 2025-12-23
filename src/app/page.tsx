@@ -9,7 +9,6 @@ import { EnhancedProductGrid } from "../components/EnhancedProductGrid";
 import { TodayDealsSection } from "../components/TodayDealsSection";
 import { TrustSection } from "../components/TrustSection";
 import { DeliveryEstimator } from "../components/DeliveryEstimator";
-import { NewsletterSection } from "../components/NewsletterSection";
 import { PriceComparisonStrip } from "../components/PriceComparisonStrip";
 
 export default function Home() {
@@ -47,9 +46,6 @@ export default function Home() {
       
       {/* 11. Utility Tool - Delivery Check */}
       <DeliveryEstimator />
-      
-      {/* 12. Lead Capture - Newsletter (Typically Last) */}
-      <NewsletterSection />
     </>
   );
 }

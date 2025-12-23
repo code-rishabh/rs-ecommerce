@@ -21,9 +21,9 @@ const usps = [
 
 export function USPsSection() {
   return (
-    <section className="border-b border-zinc-200 bg-white py-10">
+    <section className="border-b border-zinc-200 bg-white py-16 lg:py-20">
       <div className="container-custom">
-        <div className="mb-10 text-center">
+        <div className="mb-12 text-center">
           <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700">
             <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />

@@ -51,7 +51,7 @@ export default function HardwarePage() {
 
             {/* Product Grid */}
             <div className="flex-1">
-              <EnhancedProductGrid />
+              <EnhancedProductGrid showViewAll={false} />
             </div>
           </div>
         </div>

@@ -51,9 +51,9 @@ export function BundleBuilderPreview() {
   };
 
   return (
-    <section id="bundles" className="border-b border-zinc-200 bg-gradient-to-b from-zinc-50 to-white py-20">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="mb-10 text-center">
+    <section id="bundles" className="border-b border-zinc-200 bg-gradient-to-b from-zinc-50 to-white py-16 lg:py-20">
+      <div className="container-custom">
+        <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
             Build Your Enterprise VR Bundle
           </h2>

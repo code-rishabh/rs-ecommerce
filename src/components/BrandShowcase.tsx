@@ -70,9 +70,9 @@ const isvPartners = [
 
 export function BrandShowcase() {
   return (
-    <section className="border-b border-zinc-200 bg-white py-10">
+    <section className="border-b border-zinc-200 bg-white py-16 lg:py-20">
       <div className="container-custom">
-        <div className="mb-8 text-center">
+        <div className="mb-10 text-center">
           <h2 className="text-2xl font-bold text-zinc-900 sm:text-3xl">
             Explore Our Ecosystem
           </h2>

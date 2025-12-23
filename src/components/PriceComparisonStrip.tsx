@@ -24,7 +24,7 @@ export function PriceComparisonStrip() {
   ];
 
   return (
-    <section className="border-b border-zinc-200 bg-gradient-to-br from-emerald-50 via-green-50 to-emerald-50 py-4">
+    <section className="border-b border-zinc-200 bg-gradient-to-br from-emerald-50 via-green-50 to-emerald-50 py-3">
       <div className="container-custom">
         <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
           <div className="flex items-center gap-1.5">

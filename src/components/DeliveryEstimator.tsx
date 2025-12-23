@@ -28,8 +28,8 @@ export function DeliveryEstimator() {
   };
 
   return (
-    <section id="delivery" className="border-b border-zinc-200 bg-white py-16">
-      <div className="mx-auto max-w-6xl px-4 lg:px-8">
+    <section id="delivery" className="border-b border-zinc-200 bg-white py-12">
+      <div className="container-custom">
         <div className="grid gap-8 md:grid-cols-[minmax(0,1.5fr)_minmax(0,1.3fr)] md:items-center">
           <div>
             <h2 className="text-2xl font-bold text-zinc-900">

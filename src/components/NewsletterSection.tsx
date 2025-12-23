@@ -16,8 +16,8 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="border-b border-zinc-200 bg-zinc-50 py-16">
-      <div className="mx-auto max-w-4xl px-4 lg:px-8">
+    <section className="border-b border-zinc-200 bg-zinc-50 py-12">
+      <div className="container-custom max-w-4xl">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-zinc-900 sm:text-3xl">
             Stay Updated on Enterprise VR Deals

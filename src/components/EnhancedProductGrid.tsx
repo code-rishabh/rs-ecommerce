@@ -114,7 +114,11 @@ const products: Product[] = [
   },
 ];
 
-export function EnhancedProductGrid() {
+interface EnhancedProductGridProps {
+  showViewAll?: boolean;
+}
+
+export function EnhancedProductGrid({ showViewAll = true }: EnhancedProductGridProps) {
   const { addToCart } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const [addingId, setAddingId] = useState<number | null>(null);
@@ -182,20 +186,34 @@ export function EnhancedProductGrid() {
   };
 
   return (
-    <section id="featured-products" className="border-b border-zinc-200 bg-white section-spacing">
+    <section id="featured-products" className="border-b border-zinc-200 bg-white py-16 lg:py-20">
       <div className="container-custom">
-        <div className="mb-8 text-center">
-          <h2 className="text-3xl font-extrabold text-zinc-900 sm:text-4xl">
-            Featured Hardware
-          </h2>
-          <p className="mt-2 text-base text-zinc-600">
-            Enterprise-grade VR devices with commercial warranties and MDM compatibility
-          </p>
+        {/* Header with View All Button */}
+        <div className="mb-10 flex flex-col items-center justify-between gap-4 sm:flex-row sm:items-end">
+          <div className="text-center sm:text-left">
+            <h2 className="text-3xl font-extrabold text-zinc-900 sm:text-4xl">
+              Featured Hardware
+            </h2>
+            <p className="mt-2 text-base text-zinc-600">
+              Enterprise-grade VR devices with commercial warranties and MDM compatibility
+            </p>
+          </div>
+          {showViewAll && (
+            <Link
+              href="/hardware"
+              className="group inline-flex items-center gap-2 rounded-lg border-2 border-red-500 bg-white px-6 py-3 text-sm font-bold text-red-600 transition-all hover:bg-red-500 hover:text-white hover:shadow-lg hover:scale-105"
+            >
+              <span>View All Hardware</span>
+              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          )}
         </div>
 
-        {/* Compact Product Grid - eBay Style Uniform Heights */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {products.map((product) => (
+        {/* Compact Product Grid - 4 Cards Per Row */}
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {products.slice(0, 4).map((product) => (
             <div key={product.id} className="group flex flex-col">
               <Link
                 href={`/hardware/${product.id}`}
@@ -235,13 +253,68 @@ export function EnhancedProductGrid() {
                     )}
                     
                     {product.isTrending && (
-                      <div className="absolute left-2 top-2 z-10 flex items-center gap-1 rounded-md bg-gradient-to-r from-pink-500 to-rose-500 px-2 py-1 text-[10px] font-bold text-white shadow-md">
+                      <div className="absolute left-2 top-2 z-10 flex items-center gap-1 rounded-md bg-gradient-to-r from-red-500 to-red-600 px-2 py-1 text-[10px] font-bold text-white shadow-md">
                         <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                         </svg>
                         TREND
                       </div>
                     )}
+
+                    {/* Wishlist Button - Top Right Corner */}
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleWishlistToggle(e, product);
+                      }}
+                      className={`absolute right-2 top-12 z-20 rounded-full p-2 backdrop-blur-md transition-all hover:scale-110 ${
+                        isInWishlist(`hardware-${product.id}`)
+                          ? "bg-red-500/90 text-white shadow-lg"
+                          : "bg-white/90 text-zinc-600 shadow-md hover:bg-white hover:text-red-600"
+                      }`}
+                      aria-label={isInWishlist(`hardware-${product.id}`) ? "Remove from wishlist" : "Add to wishlist"}
+                    >
+                      {isInWishlist(`hardware-${product.id}`) ? (
+                        <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                      ) : (
+                        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                      )}
+                    </button>
+
+                    {/* Add to Cart Button - Slides up from bottom on hover */}
+                    <div className="absolute bottom-0 left-0 right-0 z-20 translate-y-full bg-gradient-to-t from-black/90 via-black/80 to-transparent p-4 transition-all duration-300 ease-out group-hover:translate-y-0">
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleAddToCart(e, product);
+                        }}
+                        disabled={addingId === product.id}
+                        className="w-full rounded-lg bg-gradient-to-r from-red-500 to-red-600 px-4 py-3 text-sm font-bold text-white shadow-xl transition-all hover:from-red-600 hover:to-red-700 hover:shadow-2xl hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      >
+                        {addingId === product.id ? (
+                          <span className="flex items-center justify-center gap-2">
+                            <svg className="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                            </svg>
+                            <span>Adding...</span>
+                          </span>
+                        ) : (
+                          <span className="flex items-center justify-center gap-2">
+                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                            Add to Cart
+                          </span>
+                        )}
+                      </button>
+                    </div>
                   </div>
                 
                   {/* Product Info - Compact & Uniform */}
@@ -322,69 +395,8 @@ export function EnhancedProductGrid() {
                   </div>
                 </div>
               </Link>
-              
-              {/* Add to Cart & Wishlist - Always Visible, Compact */}
-              <div className="mt-2 flex gap-2">
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleAddToCart(e, product);
-                  }}
-                  disabled={addingId === product.id}
-                  className="flex-1 rounded-lg bg-red-600 px-4 py-2 text-sm font-bold text-white shadow-sm transition-all hover:bg-red-700 hover:shadow-md hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {addingId === product.id ? (
-                    <span className="flex items-center justify-center gap-1.5">
-                      <svg className="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                      </svg>
-                      <span className="text-xs">Adding...</span>
-                    </span>
-                  ) : (
-                    <span className="flex items-center justify-center gap-1.5 text-xs">
-                      <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-                      Add to Cart
-                    </span>
-                  )}
-                </button>
-                <button
-                  onClick={(e) => handleWishlistToggle(e, product)}
-                  className={`rounded-lg border p-2 transition-all hover:scale-110 ${
-                    isInWishlist(`hardware-${product.id}`)
-                      ? "border-red-600 bg-red-50 text-red-600"
-                      : "border-zinc-200 bg-white text-zinc-600 hover:border-red-600 hover:text-red-600"
-                  }`}
-                  aria-label={isInWishlist(`hardware-${product.id}`) ? "Remove from wishlist" : "Add to wishlist"}
-                >
-                  {isInWishlist(`hardware-${product.id}`) ? (
-                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                  ) : (
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
-                  )}
-                </button>
-              </div>
             </div>
           ))}
-        </div>
-
-        {/* View All CTA - Compact */}
-        <div className="mt-10 text-center">
-          <Link
-            href="/hardware"
-            className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-6 py-2.5 text-sm font-semibold text-zinc-900 transition-all hover:border-zinc-400 hover:bg-zinc-50"
-          >
-            View All Hardware
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
         </div>
       </div>
       

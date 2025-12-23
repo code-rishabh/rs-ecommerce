@@ -47,7 +47,7 @@ const banners = [
 
 export function PromotionalBanners() {
   return (
-    <section className="border-b border-zinc-200 bg-white py-8">
+    <section className="border-b border-zinc-200 bg-white py-12">
       <div className="container-custom">
         <div className="grid gap-4 md:grid-cols-3">
           {banners.map((banner) => (

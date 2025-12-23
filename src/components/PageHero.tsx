@@ -9,7 +9,7 @@ type PageHeroProps = {
 
 export function PageHero({ title, subtitle, imageUrl, badge }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden border-b border-zinc-200 bg-gradient-to-br from-zinc-50 via-white to-zinc-50 py-16 sm:py-20">
+    <section className="relative overflow-hidden border-b border-zinc-200 bg-gradient-to-br from-zinc-50 via-white to-zinc-50 pt-20 pb-6 sm:pt-22 sm:pb-8">
       {/* Background Decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-gradient-to-br from-red-100/20 to-transparent blur-3xl" />
@@ -18,21 +18,21 @@ export function PageHero({ title, subtitle, imageUrl, badge }: PageHeroProps) {
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
         <div className="grid gap-8 md:grid-cols-[minmax(0,1.8fr)_minmax(0,1.2fr)] md:items-center">
-          <div className="space-y-4">
+          <div className="space-y-3">
             {badge && (
-              <span className="inline-block rounded-full bg-red-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-red-700">
+              <span className="inline-block rounded-full bg-red-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-red-700">
                 {badge}
               </span>
             )}
-            <h1 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl lg:text-5xl">
+            <h1 className="text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl lg:text-4xl">
               {title}
             </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
+            <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 sm:text-base">
               {subtitle}
             </p>
           </div>
           {imageUrl && (
-            <div className="relative hidden h-64 w-full overflow-hidden rounded-2xl border-2 border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 shadow-xl md:block">
+            <div className="relative hidden h-48 w-full overflow-hidden rounded-xl border border-zinc-200 bg-gradient-to-br from-zinc-100 to-zinc-200 shadow-lg md:block">
               <Image
                 src={imageUrl}
                 alt={title}
